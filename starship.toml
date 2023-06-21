@@ -1,0 +1,84 @@
+command_timeout = 1000
+add_newline = true
+
+format = """
+[](bg:none fg:#38628B)\
+[ ](bg:#38628B fg:#D8DEE9)\
+[](bg:#81A1C1 fg:#38628B)\
+$directory\
+[](bg:#8FBCBB fg:#81A1C1)\
+$git_branch$git_status\
+[](bg:#D08770 fg:#8FBCBB)\
+$python$rust$go$lua\
+[](bg:#A3BE8C fg:#D08770)\
+$aws\
+[](bg:none fg:#A3BE8C)\
+$git_metrics
+ $character
+"""
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bg:#81A1C1 fg:#282c34"
+format = "[ $path]($style)[$read_only]($read_only_style)"
+
+[git_status]
+format = "([ $all_status$ahead_behind]($style))"
+untracked = " "
+staged = " "
+renamed = ""
+modified = " "
+deleted = " "
+stashed = ""
+conflicted = " "
+style = "bg:#8FBCBB fg:#282c34"
+ignore_submodules = true
+
+[git_branch]
+symbol = "   "
+style = "bg:#8FBCBB fg:#282c34"
+format = "[$symbol$branch(:$remote_branch)]($style)"
+truncation_length = 30
+
+[git_metrics]
+format = "([  $added]($added_style))([  $deleted]($deleted_style))"
+added_style = "bg:none fg:#a3be8c"
+deleted_style = "bg:none fg:#d08770"
+disabled = false
+
+[rust]
+symbol = "   "
+style = "bg:#D08770 fg:#282c34"
+format = "[$symbol($version )]($style)"
+
+[python]
+symbol = "   "
+style = "bg:#D08770 fg:#282c34"
+format = "[$symbol$pyenv_prefix($version)(($virtualenv))]($style)"
+
+[golang]
+symbol = "   "
+style = "bg:#D08770 fg:#282c34"
+format = "[$symbol($version )]($style)"
+
+[nodejs]
+disabled = true
+
+[package]
+symbol = "   "
+disabled = true
+
+[lua]
+symbol = "   "
+style = "bg:#D08770 fg:#282c34"
+format = "[$symbol($version )]($style)"
+
+[docker_context]
+symbol = "   "
+
+[aws]
+format = "[$symbol($profile)]($style)"
+symbol = "   "
+style = "bg:#A3BE8C fg:#282c34"
+force_display = true
