@@ -50,7 +50,7 @@ disabled = false
 [rust]
 symbol = "   "
 style = "bg:#D08770 fg:#282c34"
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version)]($style)"
 
 [python]
 symbol = "   "
@@ -60,7 +60,7 @@ format = "[$symbol$pyenv_prefix($version)(($virtualenv))]($style)"
 [golang]
 symbol = "   "
 style = "bg:#D08770 fg:#282c34"
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version)]($style)"
 
 [nodejs]
 disabled = true
@@ -72,7 +72,7 @@ disabled = true
 [lua]
 symbol = "   "
 style = "bg:#D08770 fg:#282c34"
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version)]($style)"
 
 [docker_context]
 symbol = "   "
