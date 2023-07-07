@@ -13,7 +13,7 @@ $python$rust$go$lua\
 [](bg:#A3BE8C fg:#D08770)\
 $aws\
 [](bg:none fg:#A3BE8C)\
-$git_metrics
+$git_metrics$fill$cmd_duration
  $character
 """
 
@@ -22,6 +22,12 @@ truncation_length = 3
 truncate_to_repo = true
 style = "bg:#81A1C1 fg:#282c34"
 format = "[ $path]($style)[$read_only]($read_only_style)"
+
+[cmd_duration]
+format = " [$duration]($style)"
+
+[fill]
+symbol = " "
 
 [git_status]
 format = "([ $all_status$ahead_behind]($style))"
