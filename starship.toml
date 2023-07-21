@@ -61,7 +61,7 @@ format = "[$symbol($version)]($style)"
 [python]
 symbol = "   "
 style = "bg:#D08770 fg:#282c34"
-format = "[$symbol$pyenv_prefix($version)(($virtualenv))]($style)"
+format = '[$symbol$pyenv_prefix($version)( \($virtualenv\))]($style)'
 
 [golang]
 symbol = "   "
