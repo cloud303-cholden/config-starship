@@ -3,7 +3,7 @@ add_newline = true
 
 format = """
 [](bg:none fg:#38628B)\
-[ ](bg:#38628B fg:#D8DEE9)\
+$username\
 [](bg:#81A1C1 fg:#38628B)\
 $directory\
 [](bg:#8FBCBB fg:#81A1C1)\
@@ -14,14 +14,18 @@ $python$rust$go$lua\
 $aws\
 [](bg:none fg:#A3BE8C)\
 $git_metrics$fill$cmd_duration
- $character
 """
+
+[username]
+show_always = true
+style_user = "bg:#38628B fg:#D8DEE9"
+format = "[ $user ]($style)"
 
 [directory]
 truncation_length = 3
 truncate_to_repo = true
 style = "bg:#81A1C1 fg:#282c34"
-format = "[ $path]($style)[$read_only]($read_only_style)"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
 
 [cmd_duration]
 format = " [$duration]($style)"
@@ -30,61 +34,56 @@ format = " [$duration]($style)"
 symbol = " "
 
 [git_status]
-format = "([ $all_status$ahead_behind]($style))"
-untracked = " "
-staged = " "
+format = "([ $all_status$ahead_behind ]($style))"
+untracked = ""
+staged = ""
 renamed = ""
-modified = " "
-deleted = " "
+modified = ""
+deleted = ""
 stashed = ""
-conflicted = " "
+conflicted = ""
 style = "bg:#8FBCBB fg:#282c34"
 ignore_submodules = true
 
 [git_branch]
-symbol = "   "
+symbol = "  "
 style = "bg:#8FBCBB fg:#282c34"
-format = "[$symbol$branch(:$remote_branch)]($style)"
+format = "[$symbol$branch(:$remote_branch) ]($style)"
 truncation_length = 30
 
 [git_metrics]
-format = "([  $added]($added_style))([  $deleted]($deleted_style))"
+format = "([  $added]($added_style))([  $deleted]($deleted_style))"
 added_style = "bg:none fg:#a3be8c"
 deleted_style = "bg:none fg:#d08770"
 disabled = false
 
 [rust]
-symbol = "   "
+symbol = "  "
 style = "bg:#D08770 fg:#282c34"
 format = "[$symbol($version)]($style)"
 
 [python]
-symbol = "   "
+symbol = "  "
 style = "bg:#D08770 fg:#282c34"
 format = '[$symbol$pyenv_prefix($version)( \($virtualenv\))]($style)'
-
-[golang]
-symbol = "   "
-style = "bg:#D08770 fg:#282c34"
-format = "[$symbol($version)]($style)"
 
 [nodejs]
 disabled = true
 
 [package]
-symbol = "   "
+symbol = " 󰆧 "
 disabled = true
 
 [lua]
-symbol = "   "
+symbol = "  "
 style = "bg:#D08770 fg:#282c34"
 format = "[$symbol($version)]($style)"
 
 [docker_context]
-symbol = "   "
+symbol = "  "
 
 [aws]
 format = "[$symbol($profile)]($style)"
-symbol = "   "
+symbol = "  "
 style = "bg:#A3BE8C fg:#282c34"
 force_display = true
